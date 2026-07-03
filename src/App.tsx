@@ -154,7 +154,7 @@ export default function App() {
       <Hero lang={lang} />
 
       {/* 6. Romantic Quote Section */}
-      <section id="quote-section" className="py-20 md:py-32 relative text-center">
+      <section id="quote-section" className="pt-20 pb-10 md:pt-32 md:pb-12 relative text-center">
         <div className="max-w-4xl mx-auto px-6 space-y-4">
           <Heart size={24} className="text-gold/30 mx-auto animate-pulse" />
           <motion.p
@@ -176,7 +176,7 @@ export default function App() {
       </section>
 
       {/* 7. Wedding Details Section (Timing, Venue, dress code, parking) */}
-      <section id="details" className="py-16 max-w-5xl mx-auto px-6">
+      <section id="details" className="pt-8 pb-16 max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
