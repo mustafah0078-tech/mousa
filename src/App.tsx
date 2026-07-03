@@ -162,11 +162,11 @@ export default function App() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5 }}
-            className="font-serif text-2xl md:text-4xl text-dark-neutral leading-relaxed font-light italic tracking-wide"
+            className={`text-2xl md:text-4xl leading-relaxed tracking-wide ${lang === "en" ? "font-serif text-dark-neutral font-light italic" : "font-['Amiri',_serif] text-[#B89F6B] font-normal"}`}
           >
             {lang === "en"
               ? "“May Allah bless you both and join you in goodness.”"
-              : "«بارك الله لهما وجمع بينهما في خير»"}
+              : "بارك الله لكما وبارك عليكما وجمع بينكما في خير"}
           </motion.p>
           <div className="w-12 h-[1px] bg-gold/30 mx-auto mt-6" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-neutral block mt-2">
@@ -224,9 +224,9 @@ export default function App() {
                     </>
                   ) : (
                     <>
-                      <strong>زفة العريس:</strong><br />
+                      <strong>زفة العريس</strong><br />
                       الساعة ٥:٣٠ مساءً<br />
-                      <strong className="block mt-2">مراسم الاستقبال والزفاف:</strong><br />
+                      <strong className="block mt-2">بدء حفل الزفاف</strong><br />
                       الساعة ٨:٠٠ مساءً
                     </>
                   )}
@@ -249,7 +249,7 @@ export default function App() {
               </div>
               <div className="space-y-3 w-full">
                 <h3 className="font-serif text-xl text-dark-neutral font-light font-semibold">
-                  {lang === "en" ? "The Gorgeous Venue" : "الموقع وقاعة الفرح"}
+                  {lang === "en" ? "The Gorgeous Venue" : "الموقع"}
                 </h3>
                 <p className="font-body text-base md:text-lg text-taupe-neutral leading-relaxed">
                   {lang === "en" ? (
@@ -260,8 +260,8 @@ export default function App() {
                     </>
                   ) : (
                     <>
-                      <strong>مزرعة وقاعات Grand Views</strong> <br />
-                      طريق المطار، عمان، الأردن.
+                      <strong>قاعات Grand Views</strong> <br />
+                      عمان، طريق المطار
                     </>
                   )}
                 </p>
