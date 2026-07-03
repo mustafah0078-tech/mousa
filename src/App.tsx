@@ -4,7 +4,6 @@ import React from "react";
 import { Clock, MapPin, Calendar, Heart, Map, ChevronUp, Languages, Menu, X } from "lucide-react";
 import Hero from "./components/Hero";
 import RSVPForm from "./components/RSVPForm";
-import AIConcierge from "./components/AIConcierge";
 import AudioPlayer from "./components/AudioPlayer";
 import CustomCursor from "./components/CustomCursor";
 
@@ -46,9 +45,6 @@ export default function App() {
 
       {/* Floating Audio Soundtrack Player */}
       <AudioPlayer />
-
-      {/* AI Wedding Concierge Butler Panel */}
-      <AIConcierge lang={lang} />
 
       {/* 1. Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold/30 via-gold to-gold/30 z-50 origin-left" style={{ transformScale: "none" }}>
@@ -296,6 +292,21 @@ export default function App() {
           </motion.div>
 
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-16 text-center space-y-3"
+        >
+          <p className="font-['Amiri',_serif] text-xl md:text-2xl text-[#C7A03C] font-normal leading-relaxed">
+            {lang === "en" ? "Your presence is our greatest gift," : "وجودكم هو أجمل هدية لنا،"}
+          </p>
+          <p className="font-['Amiri',_serif] text-xl md:text-2xl text-[#C7A03C] font-normal leading-relaxed">
+            {lang === "en" ? "And children's heaven is their homes." : "وجنة الأطفال منازلهم."}
+          </p>
+        </motion.div>
       </section>
 
       {/* 8. Luxury Glass RSVP Form */}
