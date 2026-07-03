@@ -7,25 +7,37 @@ export default function AudioPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // A romantic, soothing royalty-free wedding piano piece
-  const MUSIC_URL = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3";
+  const MUSIC_URL = "https://dn721903.ca.archive.org/0/items/Maher_Zean_www.suratmp3.com/Baraka_Allahu_Lakuma.mp3";
 
   useEffect(() => {
     const audio = new Audio(MUSIC_URL);
-    audio.loop = true;
     audio.volume = volume;
     audioRef.current = audio;
 
-    // Ensure it replays from the beginning when it ends
-    const handleEnded = () => {
-      audio.currentTime = 0;
-      audio.play().catch(e => console.error("Loop playback prevented", e));
+    const handleLoadedMetadata = () => {
+      audio.currentTime = 59;
     };
-    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+
+    const handleTimeUpdate = () => {
+      if (audio.currentTime >= 78) {
+        audio.currentTime = 59;
+      }
+    };
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+
+    // Attempt autoplay without muting
+    audio.play().then(() => {
+      setIsPlaying(true);
+    }).catch(err => {
+      console.warn("Audio play prevented by browser autoplay policy.", err);
+    });
 
     // Soft fade-in on playing
     return () => {
       if (audioRef.current) {
-        audioRef.current.removeEventListener('ended', handleEnded);
+        audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
         audioRef.current.pause();
         audioRef.current = null;
       }
