@@ -15,10 +15,10 @@ export default function Hero({ lang }: HeroProps) {
   const TARGET_DATE = new Date("2026-07-17T20:00:00").getTime();
 
   useEffect(() => {
-    // Initial preloader duration (2.2s for beautiful suspense)
+    // Initial preloader duration (2.7s for beautiful suspense)
     const loaderTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2200);
+    }, 2700);
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -89,16 +89,20 @@ export default function Hero({ lang }: HeroProps) {
               transition={{ duration: 1 }}
               className="space-y-4"
             >
-              <span className="font-mono text-xs uppercase tracking-[0.4em] text-gold block">
-                {lang === "en" ? "Mousa & Sadeen" : "موسى و سدين"}
+              <span className={`uppercase block ${lang === "en" ? "font-mono text-xs tracking-[0.4em] text-gold" : "text-xl md:text-2xl text-[#C7A03C] font-['Aref_Ruqaa',_serif] mb-2"}`}>
+                {lang === "en" ? "Mousa & Sadeen" : "موسى وسدين"}
               </span>
-              <h1 className="font-serif text-4xl md:text-5xl text-dark-neutral font-light tracking-widest italic">
-                {lang === "en" ? "The Invitation" : "دعوة زفاف ملوكية"}
+              <h1 className={`${lang === "en" ? "font-serif text-4xl md:text-5xl text-dark-neutral font-light tracking-widest italic" : "text-5xl md:text-6xl text-dark-neutral font-['Aref_Ruqaa',_serif] tracking-normal leading-relaxed"}`}>
+                {lang === "en" ? "The Invitation" : "دعوة زفاف"}
               </h1>
-              <div className="w-16 h-[1px] bg-gold/40 mx-auto" />
-              <span className="font-body text-base text-stone-neutral block italic">
-                {lang === "en" ? "Please wait for the cinematic experience..." : "انتظر اللحظة الساحرة..."}
-              </span>
+              {lang === "en" && (
+                <>
+                  <div className="w-16 h-[1px] bg-gold/40 mx-auto my-4" />
+                  <span className="block italic font-body text-base text-stone-neutral">
+                    Please wait for the cinematic experience...
+                  </span>
+                </>
+              )}
             </motion.div>
 
             <div className="absolute bottom-0 inset-x-0 h-40 opacity-20 bg-[radial-gradient(ellipse_at_bottom,rgba(212,175,55,0.3),transparent)]" />

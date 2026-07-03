@@ -9,7 +9,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import CustomCursor from "./components/CustomCursor";
 
 export default function App() {
-  const [lang, setLang] = useState<"en" | "ar">("en");
+  const [lang, setLang] = useState<"en" | "ar">("ar");
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -220,14 +220,18 @@ export default function App() {
                   {lang === "en" ? (
                     <>
                       <strong>Groom's Zaffeh:</strong> 5:30 PM <br />
-                      <strong className="block mt-2">Main Ceremony & Reception:</strong> 8:00 PM <br />
+                      <div className="mt-2">
+                        <strong>Main Ceremony & Reception:</strong> 8:00 PM
+                      </div>
                     </>
                   ) : (
                     <>
                       <strong>زفة العريس</strong><br />
-                      الساعة ٥:٣٠ مساءً<br />
-                      <strong className="block mt-2">بدء حفل الزفاف</strong><br />
-                      الساعة ٨:٠٠ مساءً
+                      الساعة ٥:٣٠ مساءً
+                      <div className="mt-2">
+                        <strong>بدء حفل الزفاف</strong><br />
+                        الساعة ٨:٠٠ مساءً
+                      </div>
                     </>
                   )}
                 </p>
@@ -260,21 +264,31 @@ export default function App() {
                     </>
                   ) : (
                     <>
-                      <strong>قاعات Grand Views</strong> <br />
+                      <strong>مزرعة Grand Views</strong> <br />
                       عمان، طريق المطار
                     </>
                   )}
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-wrap gap-3">
                   <a
-                    id="link-google-maps"
-                    href="https://maps.google.com/?q=Amman+Airport+Road"
+                    id="link-google-maps-venue"
+                    href="https://maps.app.goo.gl/eRaxMMB5aNK571ou7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white bg-transparent rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-none"
                   >
                     <Map size={12} />
-                    <span>{lang === "en" ? "Navigate to Venue" : "عرض الموقع على الخريطة"}</span>
+                    <span>{lang === "en" ? "Venue Location" : "موقع المزرعة"}</span>
+                  </a>
+                  <a
+                    id="link-google-maps-groom"
+                    href="https://maps.app.goo.gl/wTDJPv8YV2xnfHp4A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white bg-transparent rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-none"
+                  >
+                    <Map size={12} />
+                    <span>{lang === "en" ? "Groom's House Location" : "موقع منزل أهل العريس"}</span>
                   </a>
                 </div>
               </div>
@@ -292,8 +306,8 @@ export default function App() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="max-w-4xl mx-auto px-6 space-y-4">
           <span className="font-serif text-2xl text-gold block">With Love ♡</span>
-          <h4 className="font-serif text-3xl text-dark-neutral font-light tracking-widest italic">
-            {lang === "en" ? "Mousa & Sadeen" : "موسى و سدين"}
+          <h4 className="text-5xl md:text-6xl text-dark-neutral font-['Great_Vibes',_cursive] tracking-wide mt-4 mb-6">
+            Mousa & Sadeen
           </h4>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-sand-neutral">
             {lang === "en" ? "Friday, July 17, 2026 • Amman, Jordan" : "الجمعة، ١٧ تموز ٢٠٢٦ • عمان، الأردن"}
