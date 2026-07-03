@@ -15,9 +15,17 @@ export default function AudioPlayer() {
     audio.volume = volume;
     audioRef.current = audio;
 
+    // Ensure it replays from the beginning when it ends
+    const handleEnded = () => {
+      audio.currentTime = 0;
+      audio.play().catch(e => console.error("Loop playback prevented", e));
+    };
+    audio.addEventListener('ended', handleEnded);
+
     // Soft fade-in on playing
     return () => {
       if (audioRef.current) {
+        audioRef.current.removeEventListener('ended', handleEnded);
         audioRef.current.pause();
         audioRef.current = null;
       }

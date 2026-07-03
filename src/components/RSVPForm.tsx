@@ -39,7 +39,7 @@ export default function RSVPForm({ lang }: RSVPFormProps) {
 بارك الله لكم، وأتم عليكم الفرحة، وجمع بينكما على خير، ونبارك لكم مقدمًا.`;
 
     const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = "962781533474";
+    const phoneNumber = "962795685728";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab
