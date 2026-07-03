@@ -127,7 +127,10 @@ export default function Hero({ lang }: HeroProps) {
               height: `${petal.size}px`,
               opacity: petal.opacity * 0.5, // slightly more subtle for Clean Minimalism
               top: "-5%",
-              animation: `fall ${petal.duration}s linear infinite`,
+              animationName: "fall",
+              animationDuration: `${petal.duration}s`,
+              animationTimingFunction: "linear",
+              animationIterationCount: "infinite",
               animationDelay: `${petal.delay}s`,
             }}
           />
@@ -136,28 +139,47 @@ export default function Hero({ lang }: HeroProps) {
 
       {/* 3. Slow Animated Ambient Light Orb */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-slow-light pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-slow-light pointer-events-none" style={{ animationDelay: "5s" }} />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" style={{ animationName: "slow-light", animationDuration: "15s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite", animationDelay: "5s" }} />
 
       {/* 4. Main Hero Storytelling Elements */}
       <div className="relative z-10 text-center max-w-4xl px-6 py-20 flex flex-col items-center justify-center flex-1">
         
         {/* Entrance text block */}
-        <motion.span
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 0.8, y: 0 }}
           transition={{ duration: 1, delay: 2.4 }}
-          className="text-xs uppercase tracking-[0.4em] text-stone-neutral font-mono block mb-4"
+          className={`uppercase block mb-6 text-center ${lang === "en" ? "text-xs text-stone-neutral font-mono tracking-[0.4em]" : "text-xl md:text-2xl text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full max-w-full overflow-hidden"}`}
         >
-          {lang === "en" ? "Together Forever" : "معاً إلى الأبد"}
-        </motion.span>
+          {lang === "en" ? (
+            "Together Forever"
+          ) : (
+            <div className="flex flex-row flex-wrap items-center justify-center gap-4 md:gap-12 w-full px-2">
+              <span className="whitespace-nowrap">سبحان من جمع القلوب بفضله</span>
+              <span className="whitespace-nowrap">وعلى رحاب الود عمّر دارها</span>
+            </div>
+          )}
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 2.6 }}
-          className="font-serif text-xs uppercase tracking-[0.5em] text-sand-neutral mb-6 block text-center"
+          className={`uppercase mb-8 block text-center ${lang === "en" ? "font-serif text-xs tracking-[0.5em] text-sand-neutral" : "text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full"}`}
         >
-          {lang === "en" ? "The Wedding Celebration of" : "مراسم فرح الزفاف الأنيق لكل من"}
+          {lang === "en" ? (
+            "The Wedding Celebration of"
+          ) : (
+            <div className="flex flex-col items-center gap-4 w-full">
+              <span className="mb-2 text-lg md:text-xl">بكل الحب والود يتشرف</span>
+              <div className="flex flex-row flex-nowrap items-center justify-center gap-2 md:gap-6 w-full">
+                <span className="text-sm sm:text-base md:text-xl lg:text-2xl text-center whitespace-nowrap">أبناء المرحوم حسين محمد النشاش</span>
+                <span className="text-xl md:text-3xl text-[#E5C158] font-serif leading-none px-1 drop-shadow-md">&</span>
+                <span className="text-sm sm:text-base md:text-xl lg:text-2xl text-center whitespace-nowrap">السيد فارس داود النتشة</span>
+              </div>
+              <span className="text-base md:text-xl mt-3 block">بدعوتكم إلى حضور حفل زفاف</span>
+            </div>
+          )}
         </motion.h1>
 
         {/* Big Romantic Calligraphy Names */}
