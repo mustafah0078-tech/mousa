@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  
+  --color-gold: #D4AF37;
+  --color-ivory: #FAF7F2;
+  --color-cream: #F3EEE5;
+  --color-stone-neutral: #8B8378;
+  --color-taupe-neutral: #5C564E;
+  --color-sand-neutral: #B5A896;
+  --color-dark-neutral: #4A443D;
+  --color-border-neutral: #E8E2D6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: none; /* Hide standard cursor for the custom romantic cursor */
+}
+
+a, button, select, input {
+  cursor: none !important;
+}
+
+/* Premium Animations */
+@keyframes golden-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.animate-float-gold {
+  animation: golden-float 6s ease-in-out infinite;
+}
+
+@keyframes slow-light {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translate(-10%, -10%) scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: translate(10%, 10%) scale(1.1);
+  }
+}
+
+.animate-slow-light {
+  animation: slow-light 15s ease-in-out infinite;
+}
+
+/* Fade-in animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

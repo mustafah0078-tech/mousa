@@ -1,0 +1,6 @@
+{
+  "name": "Mousa & Celine Wedding Invitation",
+  "description": "A luxury cinematic wedding invitation website for Mousa and Celine, featuring an elegant countdown, love story timeline, interactive gallery, bilingual details, dynamic RSVP, well wishes guestbook, and an AI wedding concierge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
