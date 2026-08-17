@@ -90,7 +90,7 @@ export default function Hero({ lang }: HeroProps) {
               className="space-y-4"
             >
               <span className={`uppercase block ${lang === "en" ? "font-mono text-xs tracking-[0.4em] text-gold" : "text-xl md:text-2xl text-[#C7A03C] font-['Aref_Ruqaa',_serif] mb-2"}`}>
-                {lang === "en" ? "Mousa & Sadeen" : "موسى وسدين"}
+                {lang === "en" ? "Ahmad & Sarah" : "أحمد وسارة"}
               </span>
               <h1 className={`${lang === "en" ? "font-serif text-4xl md:text-5xl text-dark-neutral font-light tracking-widest italic" : "text-5xl md:text-6xl text-dark-neutral font-['Aref_Ruqaa',_serif] tracking-normal leading-relaxed"}`}>
                 {lang === "en" ? "The Invitation" : "دعوة زفاف"}
@@ -153,14 +153,14 @@ export default function Hero({ lang }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 0.8, y: 0 }}
           transition={{ duration: 1, delay: 2.4 }}
-          className={`uppercase block mb-6 text-center ${lang === "en" ? "text-xs text-stone-neutral font-mono tracking-[0.4em]" : "text-xl md:text-2xl text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full max-w-full overflow-hidden"}`}
+          className={`uppercase block mb-6 text-center ${lang === "en" ? "text-sm text-stone-neutral font-mono tracking-[0.4em]" : "text-2xl md:text-3xl lg:text-4xl text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full max-w-full overflow-hidden"}`}
         >
           {lang === "en" ? (
             "Together Forever"
           ) : (
             <div className="flex flex-row flex-wrap items-center justify-center gap-4 md:gap-12 w-full px-2">
               <span className="whitespace-nowrap">سبحان من جمع القلوب بفضله</span>
-              <span className="whitespace-nowrap">وعلى رحاب الود عمّر دارها</span>
+              <span className="whitespace-nowrap">وعلى رحاب الود عمر دارها</span>
             </div>
           )}
         </motion.div>
@@ -169,19 +169,19 @@ export default function Hero({ lang }: HeroProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 2.6 }}
-          className={`uppercase mb-8 block text-center ${lang === "en" ? "font-serif text-xs tracking-[0.5em] text-sand-neutral" : "text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full"}`}
+          className={`uppercase mb-8 block text-center ${lang === "en" ? "font-serif text-sm tracking-[0.5em] text-sand-neutral" : "text-[#E8DCC4] font-['Amiri',_serif] tracking-normal leading-loose w-full"}`}
         >
           {lang === "en" ? (
             "The Wedding Celebration of"
           ) : (
             <div className="flex flex-col items-center gap-4 w-full">
-              <span className="mb-2 text-lg md:text-xl">بكل الحب والود يتشرف</span>
+              <span className="mb-2 text-xl md:text-2xl lg:text-3xl">بكل الحب والود يتشرف</span>
               <div className="flex flex-row flex-nowrap items-center justify-center gap-2 md:gap-6 w-full">
-                <span className="text-sm sm:text-base md:text-xl lg:text-2xl text-center whitespace-nowrap">أبناء المرحوم حسين محمد النشاش</span>
-                <span className="text-xl md:text-3xl text-[#E5C158] font-serif leading-none px-1 drop-shadow-md">&</span>
-                <span className="text-sm sm:text-base md:text-xl lg:text-2xl text-center whitespace-nowrap">السيد فارس داود النتشة</span>
+                <span className="text-base sm:text-xl md:text-3xl lg:text-4xl text-center whitespace-nowrap">السيد رائد أشرف محمد</span>
+                <span className="text-2xl md:text-4xl text-[#E5C158] font-serif leading-none px-1 drop-shadow-md">&</span>
+                <span className="text-base sm:text-xl md:text-3xl lg:text-4xl text-center whitespace-nowrap">السيد علي يحيى سالم</span>
               </div>
-              <span className="text-base md:text-xl mt-3 block">بدعوتكم إلى حضور حفل زفاف</span>
+              <span className="text-xl md:text-2xl lg:text-3xl mt-3 block">بدعوتكم إلى حضور حفل زفاف</span>
             </div>
           )}
         </motion.h1>
@@ -192,14 +192,14 @@ export default function Hero({ lang }: HeroProps) {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 2.8 }}
-            className="font-serif text-5xl md:text-7xl text-dark-neutral font-light tracking-wide hover:text-gold transition-colors duration-500"
+            className="font-serif text-7xl md:text-8xl lg:text-9xl text-dark-neutral font-light tracking-wide hover:text-gold transition-colors duration-500"
           >
-            {lang === "en" ? "Mousa" : "موسى"}
+            {lang === "en" ? "Ahmad" : "أحمد"}
           </motion.h2>
           
           <div className="flex items-center justify-center py-4">
             <div className="h-[1px] w-12 bg-gold/40"></div>
-            <span className="px-4 text-[24px] text-gold font-serif">♡</span>
+            <span className="px-4 text-[32px] text-gold font-serif">♡</span>
             <div className="h-[1px] w-12 bg-gold/40"></div>
           </div>
 
@@ -207,9 +207,9 @@ export default function Hero({ lang }: HeroProps) {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 3.0 }}
-            className="font-serif text-5xl md:text-7xl text-dark-neutral font-light tracking-wide hover:text-gold transition-colors duration-500"
+            className="font-serif text-7xl md:text-8xl lg:text-9xl text-dark-neutral font-light tracking-wide hover:text-gold transition-colors duration-500"
           >
-            {lang === "en" ? "Sadeen" : "سدين"}
+            {lang === "en" ? "Sarah" : "سارة"}
           </motion.h2>
         </div>
 
@@ -227,7 +227,7 @@ export default function Hero({ lang }: HeroProps) {
           <span className="hidden sm:inline w-[1px] h-4 bg-border-neutral" />
           <span className="flex items-center gap-2 font-mono">
             <MapPin className="text-gold" size={14} />
-            <span>{lang === "en" ? "Grand Views, Amman" : "مزرعة Grand Views، عمان"}</span>
+            <span>{lang === "en" ? "Al Numan Halls, Amman" : "قاعات النعمان، عمان"}</span>
           </span>
         </motion.div>
 

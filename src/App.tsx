@@ -74,7 +74,7 @@ export default function App() {
             onClick={() => scrollToSection("home")}
             className="font-serif text-xl md:text-2xl font-light tracking-widest text-dark-neutral hover:text-gold transition-colors duration-300 focus:outline-none"
           >
-            {lang === "en" ? "Mousa ♡ Sadeen" : "موسى ♡ سدين"}
+            {lang === "en" ? "Ahmad ♡ Sarah" : "احمد ♡ سارة"}
           </button>
 
           {/* Desktop Navigation Links */}
@@ -166,7 +166,7 @@ export default function App() {
           </motion.p>
           <div className="w-12 h-[1px] bg-gold/30 mx-auto mt-6" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-neutral block mt-2">
-            Mousa & Sadeen
+            Ahmad & Sarah
           </span>
         </div>
       </section>
@@ -254,27 +254,27 @@ export default function App() {
                 <p className="font-body text-base md:text-lg text-taupe-neutral leading-relaxed">
                   {lang === "en" ? (
                     <>
-                      <strong>Grand Views Estate</strong> <br />
-                      Airport Road <br />
+                      <strong>Al Numan Halls</strong> <br />
+                      Wasfi Al-Tall Street <br />
                       Amman, Jordan.
                     </>
                   ) : (
                     <>
-                      <strong>مزرعة Grand Views</strong> <br />
-                      عمان، طريق المطار
+                      <strong>قاعات النعمان</strong> <br />
+                      عمان، شارع وصفي التل
                     </>
                   )}
                 </p>
                 <div className="pt-2 flex flex-wrap gap-3">
                   <a
                     id="link-google-maps-venue"
-                    href="https://maps.app.goo.gl/eRaxMMB5aNK571ou7"
+                    href="https://www.google.com/maps/search/?api=1&query=قاعات+النعمان+عمان"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white bg-transparent rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-none"
                   >
                     <Map size={12} />
-                    <span>{lang === "en" ? "Venue Location" : "موقع المزرعة"}</span>
+                    <span>{lang === "en" ? "Venue Location" : "موقع القاعة"}</span>
                   </a>
                   <a
                     id="link-google-maps-groom"
@@ -318,13 +318,13 @@ export default function App() {
         <div className="max-w-4xl mx-auto px-6 space-y-4">
           <span className="font-serif text-2xl text-gold block">With Love ♡</span>
           <h4 className="text-5xl md:text-6xl text-dark-neutral font-['Great_Vibes',_cursive] tracking-wide mt-4 mb-6">
-            Mousa & Sadeen
+            Ahmad & Sarah
           </h4>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-sand-neutral">
             {lang === "en" ? "Friday, July 17, 2026 • Amman, Jordan" : "الجمعة، ١٧ تموز ٢٠٢٦ • عمان، الأردن"}
           </p>
           <div className="text-[10px] text-stone-neutral font-mono mt-8">
-            © 2026 Mousa & Sadeen. All Rights Reserved. Crafted with absolute elegance.
+            © 2026 Ahmad & Sarah. All Rights Reserved. Crafted with absolute elegance.
           </div>
         </div>
       </footer>
