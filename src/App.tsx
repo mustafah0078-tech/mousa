@@ -278,7 +278,7 @@ export default function App() {
                   </a>
                   <a
                     id="link-google-maps-groom"
-                    href="https://maps.app.goo.gl/wTDJPv8YV2xnfHp4A"
+                    href="https://www.google.com/maps/search/?api=1&query=31.928556,35.880036"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-white bg-transparent rounded-full font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 shadow-sm cursor-none"

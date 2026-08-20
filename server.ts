@@ -12,7 +12,18 @@ async function startServer() {
 
   app.use(express.json());
 
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  let ai: GoogleGenAI | null = null;
+
+  function getAi(): GoogleGenAI {
+    if (!ai) {
+      const key = process.env.GEMINI_API_KEY;
+      if (!key) {
+        throw new Error("GEMINI_API_KEY environment variable is required");
+      }
+      ai = new GoogleGenAI({ apiKey: key });
+    }
+    return ai;
+  }
 
   app.post("/api/concierge", async (req, res) => {
     try {
@@ -40,7 +51,7 @@ Respond directly and elegantly.
 If asked about attendance or RSVP, kindly explain they can use the RSVP section on the website to confirm attendance.
 The user asks: "${message}"`;
 
-      const response = await ai.models.generateContent({
+      const response = await getAi().models.generateContent({
         model: "gemini-2.5-flash",
         contents: weddingPrompt,
       });
